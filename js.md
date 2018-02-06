@@ -1,4 +1,4 @@
-<h1>JavaScript 开发规范</h1>
+# JavaScript 开发规范
 ## 1. 命名规范
 
 * `大驼峰式命名法`：首字母大写。例：StudentInfo、UserInfo、ProductInfo
