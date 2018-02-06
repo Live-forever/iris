@@ -1,4 +1,4 @@
-# IRIS前端小组HTML和CSS规范V1.0
+# IRIS前端小组HTML和CSS规范
 
 ## HTML规范
 
