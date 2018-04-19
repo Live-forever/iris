@@ -33,7 +33,8 @@
  * @event :  dataChange( 搜索框中的值发生变化触发的事件 ),
  *           itemValue( 点击列表中的一条数据触发事件 ),   
  *           clickShowBack( 下拉搜索展示时, 触发事件抛出传入的 option, 也就是说你可以在点击弹出的时候去请求第一组数据),
- *           comScroll( 滚动事件, 返回boolean值 => true 表示滚动到底部了 ),
+ *           // comScroll( 滚动事件, 返回boolean值 => true 表示滚动到底部了 ),
+             scrollEnd ( 滚动到底部触发事件 )
  *           setValue( 调用此方法默认是清空操作, 也可以传name值 ) 用法: 组件上绑定 ref = 'demo' 属性  this.$refs.demo.setValue()
  *           clearValue( 外部清空事件 => 真实的清空 code)
  */            
@@ -61,10 +62,10 @@ export default {
       type: [Boolean],
       default: true
     },
-    // checkText: {
-    //   type: [String],
-    //   default: '必填项'
-    // },
+    checkText: {
+      type: [String],
+      default: '必填项'
+    },
   },
   computed: {
     showCheck() {
@@ -101,9 +102,10 @@ export default {
       let _offsetHeight = event.target.offsetHeight;
       let _scrollHeight = event.target.scrollHeight;
       if (_scrollTop + _offsetHeight >= _scrollHeight) {
-        this.$emit("comScroll", true);
+        this.$emit('scrollEnd')
+        // this.$emit("comScroll", true);
       } else {
-        this.$emit("comScroll", false);
+        // this.$emit("comScroll", false);
       }
     },
     setValue(val = '') {

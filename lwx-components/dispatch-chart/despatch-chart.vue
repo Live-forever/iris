@@ -92,6 +92,14 @@ export default {
             type: [Number],
             default: 100
         },
+        workType: {
+            type: Array,
+            default: () => []
+        },
+        selectWork: {
+            type: String,
+            default: ''
+        }
     },
     components: {
         Model
@@ -99,21 +107,6 @@ export default {
     data() {
         return {
             t: null,
-            workType: [
-                {
-                    text: '机电',
-                    value: '0'
-                },
-                {
-                    text: '钣金',
-                    value: 1
-                },
-                {
-                    text: '油漆',
-                    value: 2
-                }
-            ],
-            selectWork: '0'
         }
     },
     computed: {
